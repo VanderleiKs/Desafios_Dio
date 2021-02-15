@@ -1,0 +1,42 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        Scanner input = new Scanner(System.in);
+        ArrayList<Integer> entrada = new ArrayList();
+        ArrayList<Integer> pares = new ArrayList();
+        ArrayList<Integer> impares = new ArrayList();
+
+         while(input.hasNextInt()){
+           entrada.add(input.nextInt());
+
+       }
+
+        entrada.remove(0);
+
+        for (int i = 0; i < entrada.size(); i++) {
+            if (entrada.get(i) % 2 == 0) {
+                pares.add(entrada.get(i));
+                Collections.sort(pares);
+            } else {
+                impares.add(entrada.get(i));
+                Collections.sort(impares);
+            }
+        }
+
+        Collections.reverse(impares);
+        for (int par : pares) {
+            System.out.println(par);
+        }
+        for (int impar : impares) {
+            System.out.println(impar);
+        }
+       
+
+
+    }
+    }
